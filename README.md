@@ -31,7 +31,8 @@ To quickly remove or add fields to your form, just create a JSON file like so:
             "index" : 3
         }
     ]
-}```
+}
+```
 
 Just simply change the type to either: "radio-question" or "input-question", and then change the label to whatever you like,
 and then increment the index.
