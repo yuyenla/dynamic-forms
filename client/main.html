@@ -1,0 +1,61 @@
+<head>
+  <title>dynamic-survey</title>
+</head>
+
+
+<body>
+  <form>
+    {{> dynamicForm}}
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+
+<template name="dynamicForm">
+  {{#each survey}}
+    {{#each questions}}
+      {{#if typeOfQuestion}}
+        {{> radio}}
+        {{else}}
+          {{>input}}
+      {{/if}}
+    {{/each}}
+  {{/each}}
+</template>
+
+<template name="radio">
+  <div class="form-group">
+    <label class="col-md-4 control-label" id="q{{index}}" value="{{label}}" for="radios{{index}}">{{label}}</label>
+    <div class="col-md-4">
+      <label class="radio-inline" for="radios{{index}}-0">
+        <input type="radio" name="radios{{index}}" id="radios-0" value="1" checked="checked">
+        1
+      </label>
+      <label class="radio-inline" for="radios{{index}}-1">
+        <input type="radio" name="radios{{index}}" id="radios-1" value="2">
+        2
+      </label>
+      <label class="radio-inline" for="radios{{index}}-2">
+        <input type="radio" name="radios{{index}}" id="radios-2" value="3">
+        3
+      </label>
+      <label class="radio-inline" for="radios{{index}}-3">
+        <input type="radio" name="radios{{index}}" id="radios-3" value="4">
+        4
+      </label>
+      <label class="radio-inline" for="radios{{index}}-4">
+        <input type="radio" name="radios{{index}}" id="radios-4" value="5">
+        5
+      </label>
+    </div>
+  </div>
+</template>
+
+<template name="input">
+  <div class="form-group">
+    <label class="col-md-4 control-label" id="q{{index}}" value="{{label}}" for="input{{index}}">{{label}}</label>
+    <div class="col-md-4">
+      <input id="flavorName" name="input{{index}}" type="text" placeholder="" class="form-control input-md">
+    </div>
+  </div>
+</template>
