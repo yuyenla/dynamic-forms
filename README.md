@@ -1,13 +1,13 @@
 # Dynamic Forms
 Create dynamic form fields with Meteor/Blaze!
 
-This is a quick and easy template for creating form fields on the go. This project only supports input fields and radio buttons
-so far, but it would be easy to add in the other form field types.
+This is a quick and easy template for creating form fields on the go. This project only supports input fields and radio buttons so far, but it would be easy to add in the other form field types too.
 
 
 To quickly remove or add fields to your form, just create a JSON file like so:
 
-```{
+```js
+{
     "_id" : "survey1",
     "questions" : [ 
         {
